@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>AI/ML/NLP Data Processing for Insights and Action</title>
+    <style>
+
+        #ProjectDescription {
+            align-items: center;
+            margin-bottom: -20px;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            padding-top: 2vh;
+            padding-bottom: 0vh;
+        }
+
+
+        iframe {
+            width: 100%;
+            height: 50%;
+            border: 2px solid #338AFF;
+            
+        }
+
+
+        #ViewMGMReviewSiteButton, #ViewWindowsReviewSiteButton, #ViewWikiAISiteButton{
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+
+        #openHtmlButton, #openMGMButton, #openWikiAIButton {
+            margin-bottom: 10px;
+        }
+
+
+
+        #openHtmlButton2, #openMGMButton2, #openWikiAIButton2 {
+            margin-bottom: 1px;
+        }
+
+
+
+        #openMGMDescription, #openSecondDescription, #openWikiAIDescription {
+            margin-bottom: 1px;
+        }
+
+
+        #fetchDataButton {
+            margin-bottom: 15px;
+        }
+
+        #viewIntroButton {
+            margin-bottom: 1px;
+        }
+
+
+        #openHtmlSection, #openSecondButtonSection, #openThirdButtonSection {
+            border: 2px solid #cccccc; 
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3px;
+         }
+
+
+        input[type="text"] {
+            margin-bottom: 10px;
+            
+        }
+
+        #fetchDataSection {
+            border: 2px solid #cccccc; 
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="p-3">
+
+<!--
+    <div id="ProjectDescription" class="pt-4">
+        <h4 style="font-weight: bold">Project Intro</h4>
+        <div>
+        
+        </div>
+    </div>
+    <div class="main-container">
+
+-->
+
+        <div class="row">
+            <div class="col-3">
+                <div id="fetchDataSection" style="font-size: small" >
+                    Enter a url to collect data from a site
+                   <input type="text" id="urlInput" style="width: 210px" placeholder="URL function is currently disabled" disabled>
+                    <button id="fetchDataButton" disabled>Fetch Data</button>
+                    
+                    
+                    <a style="text-decoration: underline; cursor: pointer; color: blue; font-size: medium;" id="viewIntroButton">View App Description</a>
+                </div>
+            </div>
+
+    
+            <div class="col-3">
+                <div id="openHtmlSection">
+                    <a style="text-decoration: underline; cursor: pointer; color: blue;" id="ViewMGMReviewSiteButton">Original MGM Hotel Reviews</a>
+                    
+                    <button class="btn btn-dark" id="openMGMButton">View Processed Results</button>
+
+
+                    <a style="text-decoration: underline; cursor: pointer; color: green;" id="openMGMButton2">View results in a new window</a>
+
+                </div>
+            </div>
+  
+            <div class="col-3">
+                <div id="openSecondButtonSection">
+
+                    <a style="text-decoration: underline; cursor: pointer; color: blue;" id="ViewWindowsReviewSiteButton">Original Windows 11 Reviews</a>
+
+                    <button class="btn btn-success" id="openHtmlButton">View Processed Results</button>
+
+
+                    <a style="text-decoration: underline; cursor: pointer; color: green;" id="openHtmlButton2">View results in a new window</a>
+                </div>
+
+            </div>
+
+            <div class="col-3">
+                <div id="openThirdButtonSection">
+
+                    <a style="text-decoration: underline; cursor: pointer; color: blue;" id ="ViewWikiAISiteButton">Original Wikipedia Article</a>
+
+                    <button class="btn btn-primary" id="openWikiAIButton">View Processed Results</button>
+
+
+                    <a style="text-decoration: underline; cursor: pointer; color: green;" id="openWikiAIButton2">View results in a new window</a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+        <div class="row">
+            <div>
+                <iframe id="embeddedBrowser" src="Intro_frame.html" style="height: 80vh"></iframe>         
+            </div>
+        </div>
+
+
+</body>
+
+
+<script>
+
+
+    document.getElementById('openHtmlButton').addEventListener('click', function() {
+        var iframe = document.getElementById('embeddedBrowser');
+        iframe.src = 'Windows11_reviews.html'; 
+    });
+
+
+    document.getElementById('openHtmlButton2').addEventListener('click', function() {
+        window.open('Windows11_reviews.html', '_blank');
+    });
+
+
+    document.getElementById('ViewWindowsReviewSiteButton').addEventListener('click', function() {
+//        var url = document.getElementById('urlInput').value;
+        var iframe = document.getElementById('embeddedBrowser');
+        iframe.src = 'https://www.capterra.com/p/251507/Windows-11/reviews'; // Set the iframe src to the entered URL
+    });
+
+
+
+
+   document.getElementById('ViewMGMReviewSiteButton').addEventListener('click', function() {
+//        var url = document.getElementById('urlInput').value;
+        var iframe = document.getElementById('embeddedBrowser');
+        iframe.src = 'https://www.tripadvisor.com/Hotel_Review-g45963-d91891-Reviews-MGM_Grand-Las_Vegas_Nevada.html'; // Set the iframe src to the entered URL
+    })
+
+
+
+    document.getElementById('openMGMButton').addEventListener('click', function() {
+//        window.open('MGM_Reviews_demo_output.html', '_blank');
+        var iframe = document.getElementById('embeddedBrowser');
+        iframe.src = 'MGM_Reviews_demo_output.html'; 
+    })
+
+    document.getElementById('openMGMButton2').addEventListener('click', function() {
+        window.open('MGM_Reviews_demo_output.html', '_blank');
+    })
+
+
+   document.getElementById('ViewWikiAISiteButton').addEventListener('click', function() {
+//        var url = document.getElementById('urlInput').value;
+        var iframe = document.getElementById('embeddedBrowser');
+        iframe.src = 'https://en.wikipedia.org/wiki/Artificial_intelligence'; 
+    });
+
+
+
+    document.getElementById('openWikiAIButton').addEventListener('click', function() {
+//        window.open('MGM_Reviews_demo_output.html', '_blank');
+        var iframe = document.getElementById('embeddedBrowser');
+        iframe.src = 'wiki_ai.html'; 
+    });
+
+    document.getElementById('openWikiAIButton2').addEventListener('click', function() {
+        window.open('wiki_ai.html', '_blank');
+    });
+
+
+    document.getElementById('viewIntroButton').addEventListener('click', function() {
+        var iframe = document.getElementById('embeddedBrowser');
+        iframe.src = 'intro_frame.html'; 
+    });
+
+
+
+</script>
+
+</html>

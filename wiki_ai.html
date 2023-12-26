@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Article Topics Tree View</title>
+<!--
+    <link rel="stylesheet" type="text/css" href="style.css">
+-->
+
+</head>
+
+<style>
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+.column {
+    width: 23%;
+    padding: 0px;
+    border: 1px solid #ddd;
+ 
+}
+.column h3 {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+li.selected {
+    background-color: #f0f0f0;
+}
+
+
+
+.key-container {
+    border: 1px solid #ccc; 
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.hidden-text {
+  visibility: hidden;
+}
+
+
+        .content_area {
+            padding: 5px;
+            margin-top: -10px;
+            border: 1px solid #ddd;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto; 
+
+        }
+
+        #hint {
+            text-align: center;
+            margin-top: -10px;             
+        }
+
+        .hidden-text {
+            visibility: hidden;
+            margin-top: -10px;             
+        }
+
+        h3 {
+            margin-top: 5px;
+            margin-botom: 5px;
+        }
+
+</style>
+<body>
+    <div class="container">
+        <div class="column" id="topics">
+            <h3>Topics</h3>
+            <div id="hint" style="text-align: center">Select a topic to view summary info:</div>
+            <hr/>
+            <div class="content_area">
+                <ul id="topicsList"></ul>
+            </div>
+        </div>
+        <div class="column" id="attributes">
+            <h3>Brief Info</h3>
+            <div id="hint" style="text-align: center">Click to see context:</div>
+            <hr/>
+            <div class="content_area">
+                <ul id="attributesList"></ul>
+            </div>
+        </div>
+        <div class="column" id="context">
+            <h3>Context</h3>
+            <div id="hint" style="text-align: center">Click to see more context:</div>
+            <hr/>
+            <div class="content_area">
+                <div id="contextContent"></div>
+            </div>
+
+        </div>
+        <div class="column" id="moreContext">
+            <h3>More Context</h3>
+            <div class="hidden-text">from current document section</div>
+            <hr/>
+            <div class="content_area">
+                <div id="moreContextContent"></div> 
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="wiki_ai_topic_script.js"></script>
+
+
+</body>
+</html>
+
+        

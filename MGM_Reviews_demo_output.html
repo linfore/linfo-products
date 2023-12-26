@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Tree View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .column {
+            flex: 1;
+            padding: 0px;
+            border: 1px solid #ddd;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        li.active {
+            background-color: #eee;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+
+        .content-item {
+            border: 1px solid #cccccc; 
+            padding: 5px;             
+            margin-bottom: 5px;       
+        }
+
+
+
+        .content_area {
+            padding: 5px;
+            margin-top: -10px;
+            border: 1px solid #ddd;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto; 
+
+        }
+
+        h3{
+            text-align: center; 
+        }
+
+        #hint {
+            text-align: center;
+            margin-top: -10px;             
+        }
+
+        .hidden-text {
+            visibility: hidden;
+            margin-top: -10px;             
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <h3>Topics</h3>
+            <div id="hint">Select a topic to view comments:</div>
+            <hr/>
+
+            <div class="content_area">
+                <ul id="person-list"></ul>
+            </div>
+
+        </div>
+
+        <div class="column">
+            <h3 style="color: green;">Positive Comments</h3>
+            <div id="hint">Select a comment to view details:</div>
+            <hr/>
+            <div class="content_area">
+                <ul style="color: green;", id="groupA-list"></ul>
+            </div>
+            
+        </div>
+
+        <div class="column">
+            <h3 style="color: red;">Negative Comments</h3>
+            <div id="hint">Select a comment to view details:</div>
+            <hr/>
+            <div class="content_area">
+                <ul style="color: red;", id="groupB-list"></ul>
+            </div>
+            
+        </div>
+
+        <div class="column"; id="contents">
+            <h3>Review Contents</h3>
+            <div class="hidden-text">related users reviews</div>
+            <hr/>
+            <div class="content_area">
+                <ul id="content-list"></ul>
+            </div>
+            
+        </div>
+    </div>
+
+<script src="mgm_topic_script.js"></script>
+
+</body>
+</html>
+    
